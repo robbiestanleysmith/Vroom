@@ -14,6 +14,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_144807) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "booking_date"
+    t.string "pickup_date"
+    t.bigint "users_id", null: false
+    t.bigint "cars_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cars_id"], name: "index_bookings_on_cars_id"
+    t.index ["users_id"], name: "index_bookings_on_users_id"
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "car_type"
     t.text "availability"
@@ -29,4 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_144807) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bookings", "cars", column: "cars_id"
+  add_foreign_key "bookings", "users", column: "users_id"
 end
