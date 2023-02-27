@@ -8,23 +8,22 @@
 
 
 email_suffix = %w[gmail.com hotmail.de live.com yahoo.com outlook.com]
-car_brand = %w[Volvo BMW VW Audi Tesla Toyota]
-car_type = %w[SUV sedan sportscar limousine]
+car_type = %w[Volvo BMW VW Audi Tesla Toyota]
 
 10.times do
-  Car.new()
-
+  Car.new(car_type: car_type.sample, availability: Faker::Date.in_date_period)
+  Car.save
 end
 
 
 
-10.times do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
+# 10.times do
+#   first_name = Faker::Name.first_name
+#   last_name = Faker::Name.last_name
 
-  email = "#{first_name}.#{last_name}@#{email_suffix.sample}"
-  User.create(first_name: first_name,
-              last_name: last_name,
-              email: email)
+#   email = "#{first_name}.#{last_name}@#{email_suffix.sample}"
+#   User.create(first_name: first_name,
+#               last_name: last_name,
+#               email: email)
 
-end
+# end
