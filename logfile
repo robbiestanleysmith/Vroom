@@ -1,0 +1,47 @@
+2023-02-27 15:10:52.789 GMT [14375] LOG:  starting PostgreSQL 14.7 (Homebrew) on x86_64-apple-darwin22.1.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2023-02-27 15:10:52.790 GMT [14375] LOG:  listening on IPv6 address "::1", port 5432
+2023-02-27 15:10:52.790 GMT [14375] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-02-27 15:10:52.793 GMT [14375] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-02-27 15:10:52.802 GMT [14376] LOG:  database system was shut down at 2023-02-27 15:10:51 GMT
+2023-02-27 15:10:52.814 GMT [14375] LOG:  database system is ready to accept connections
+2023-02-27 15:11:20.527 GMT [14457] ERROR:  relation "users" does not exist
+2023-02-27 15:11:20.527 GMT [14457] STATEMENT:  CREATE TABLE "bookings" ("id" bigserial primary key, "booking_date" character varying, "pickup_date" character varying, "users_id" bigint NOT NULL, "cars_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_141fc47c31"
+	FOREIGN KEY ("users_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_49a8506419"
+	FOREIGN KEY ("cars_id")
+	  REFERENCES "cars" ("id")
+	)
+2023-02-27 15:12:23.850 GMT [14576] ERROR:  relation "users" does not exist
+2023-02-27 15:12:23.850 GMT [14576] STATEMENT:  CREATE TABLE "bookings" ("id" bigserial primary key, "booking_date" character varying, "pickup_date" character varying, "users_id" bigint NOT NULL, "cars_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_141fc47c31"
+	FOREIGN KEY ("users_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_49a8506419"
+	FOREIGN KEY ("cars_id")
+	  REFERENCES "cars" ("id")
+	)
+2023-02-27 15:13:00.420 GMT [14652] ERROR:  relation "users" does not exist
+2023-02-27 15:13:00.420 GMT [14652] STATEMENT:  CREATE TABLE "bookings" ("id" bigserial primary key, "booking_date" character varying, "pickup_date" character varying, "user_id" bigint NOT NULL, "car_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_ef0571f117"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_5e4e81d007"
+	FOREIGN KEY ("car_id")
+	  REFERENCES "cars" ("id")
+	)
+2023-02-27 15:14:43.495 GMT [14822] ERROR:  relation "users" does not exist
+2023-02-27 15:14:43.495 GMT [14822] STATEMENT:  CREATE TABLE "bookings" ("id" bigserial primary key, "booking_date" character varying, "pickup_date" character varying, "user_id" bigint NOT NULL, "car_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_ef0571f117"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_5e4e81d007"
+	FOREIGN KEY ("car_id")
+	  REFERENCES "cars" ("id")
+	)
+2023-02-27 15:31:14.151 GMT [16940] ERROR:  insert or update on table "cars" violates foreign key constraint "fk_rails_7eccb46500"
+2023-02-27 15:31:14.151 GMT [16940] DETAIL:  Key (user_id)=(2) is not present in table "cars".
+2023-02-27 15:31:14.151 GMT [16940] STATEMENT:  INSERT INTO "cars" ("car_type", "availability", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"
+2023-02-27 15:38:16.889 GMT [17619] ERROR:  insert or update on table "cars" violates foreign key constraint "fk_rails_7eccb46500"
+2023-02-27 15:38:16.889 GMT [17619] DETAIL:  Key (user_id)=(2) is not present in table "cars".
+2023-02-27 15:38:16.889 GMT [17619] STATEMENT:  INSERT INTO "cars" ("car_type", "availability", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"
+2023-02-27 15:40:09.090 GMT [17811] ERROR:  insert or update on table "cars" violates foreign key constraint "fk_rails_7eccb46500"
+2023-02-27 15:40:09.090 GMT [17811] DETAIL:  Key (user_id)=(34) is not present in table "cars".
+2023-02-27 15:40:09.090 GMT [17811] STATEMENT:  INSERT INTO "cars" ("car_type", "availability", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"
