@@ -36,3 +36,12 @@
 	FOREIGN KEY ("car_id")
 	  REFERENCES "cars" ("id")
 	)
+2023-02-27 15:31:14.151 GMT [16940] ERROR:  insert or update on table "cars" violates foreign key constraint "fk_rails_7eccb46500"
+2023-02-27 15:31:14.151 GMT [16940] DETAIL:  Key (user_id)=(2) is not present in table "cars".
+2023-02-27 15:31:14.151 GMT [16940] STATEMENT:  INSERT INTO "cars" ("car_type", "availability", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"
+2023-02-27 15:38:16.889 GMT [17619] ERROR:  insert or update on table "cars" violates foreign key constraint "fk_rails_7eccb46500"
+2023-02-27 15:38:16.889 GMT [17619] DETAIL:  Key (user_id)=(2) is not present in table "cars".
+2023-02-27 15:38:16.889 GMT [17619] STATEMENT:  INSERT INTO "cars" ("car_type", "availability", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"
+2023-02-27 15:40:09.090 GMT [17811] ERROR:  insert or update on table "cars" violates foreign key constraint "fk_rails_7eccb46500"
+2023-02-27 15:40:09.090 GMT [17811] DETAIL:  Key (user_id)=(34) is not present in table "cars".
+2023-02-27 15:40:09.090 GMT [17811] STATEMENT:  INSERT INTO "cars" ("car_type", "availability", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"

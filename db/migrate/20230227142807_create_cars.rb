@@ -4,7 +4,7 @@ class CreateCars < ActiveRecord::Migration[7.0]
       t.string :car_type
       t.text :availability
 
-      t.references :user, foreign_key: { to_table: :cars }
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
