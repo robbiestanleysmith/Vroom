@@ -17,27 +17,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_143949) do
   create_table "bookings", force: :cascade do |t|
     t.string "booking_date"
     t.string "pickup_date"
-<<<<<<< HEAD
     t.bigint "user_id", null: false
     t.bigint "car_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_bookings_on_car_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
-=======
-    t.bigint "users_id", null: false
-    t.bigint "cars_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cars_id"], name: "index_bookings_on_cars_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
->>>>>>> 72b89e086986ec8223d9791965e89c7bb8fdb275
   end
 
   create_table "cars", force: :cascade do |t|
     t.string "car_type"
     t.text "availability"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cars_on_user_id"
@@ -51,12 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_143949) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
   add_foreign_key "bookings", "cars"
   add_foreign_key "bookings", "users"
-  add_foreign_key "cars", "cars", column: "user_id"
-=======
-  add_foreign_key "bookings", "cars", column: "cars_id"
-  add_foreign_key "bookings", "users", column: "users_id"
->>>>>>> 72b89e086986ec8223d9791965e89c7bb8fdb275
+  add_foreign_key "cars", "users"
 end
