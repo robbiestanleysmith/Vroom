@@ -29,3 +29,6 @@ The BMW Series 02 had a good commercial success, so the German company decided t
 
 <div data-plugin-in-point-id="HERO_DEFAULT" data-section-id="HERO_DEFAULT" style="padding-top:24px"><div class="_88xxct"><div class="_z80d2i"><div class="_9xgknn"><div class="_168ht2w"><div class="_skzmvy"><div class="_5ltqju"><div class="_13sj9hk"><div class="_100fji8"><div class="c1d4ry4s dir dir-ltr"><button aria-label="Listing image 1, Show all photos" type="button" class="_1xh26pm2 l1j9v1wn dir dir-ltr"><div class="_1h6n1zu" style="display: inline-block; vertical-align: bottom; height: 100%; width: 100%; min-height: 1px;"><picture><source srcset="/Users/neilcairns/code/ndc13/get_a_wagon/app/assets/images/BMW-2002-Front-View-Feature-New-Size-e1674489699901.jpg
 " media="(max-width: 743px)"></div>
+<% @car.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

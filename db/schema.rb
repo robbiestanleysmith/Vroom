@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_121622) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_141050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,20 +55,34 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_121622) do
   end
 
   create_table "cars", force: :cascade do |t|
-    t.string "car_type"
     t.text "availability"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "make"
+    t.string "model"
+    t.string "mileage"
+    t.float "price_per_day"
+    t.string "location"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "first_name"
     t.string "last_name"
-    t.text "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "avatar"
+    t.string "rating"
+    t.boolean "host_answer"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
