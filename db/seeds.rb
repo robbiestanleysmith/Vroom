@@ -23,9 +23,9 @@ end
 
 # Seed cars
 users = User.all
-car_type = %w[Volvo BMW VW Audi Tesla Toyota]
-9.times do
-  car = Car.new(car_type: car_type.sample, availability: Faker::Date.in_date_period)
+title = %w[ BMW VW Audi Tesla Toyota]
+15.times do
+  car = Car.new(title: title.sample, availability: Faker::Date.in_date_period)
   user = users.sample
   car.user_id = user.id
   car.save
