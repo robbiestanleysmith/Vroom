@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+require "open-uri"
 
 # Seed users
 email_suffix = %w[gmail.com hotmail.de live.com yahoo.com outlook.com]
@@ -22,23 +22,32 @@ email_suffix = %w[gmail.com hotmail.de live.com yahoo.com outlook.com]
 end
 
 # Seed cars
-users = User.all
-title = %w[ BMW VW Audi Tesla Toyota]
-15.times do
-  car = Car.new(title: title.sample, availability: Faker::Date.in_date_period)
-  user = users.sample
-  car.user_id = user.id
-  car.save
-end
-cars = Car.all
 
-10.times do
-  car = cars.sample
-  user = users.sample
-  booking = Booking.new(car_id: car.id,
-                            user_id: user.id,
-                            booking_date: Faker::Date.in_date_period,
-                            pickup_date: Faker::Date.in_date_period
-                          )
-  booking.save
-end
+# users = User.all
+# title = %w[BMW VW Audi Tesla Toyota]
+# 15.times do
+#   car = Car.new(title: title.sample, availability: Faker::Date.in_date_period)
+#   user = users.sample
+#   car.user_id = user.id
+#   car.save
+# end
+# cars = Car.all
+
+# 10.times do
+#   car = cars.sample
+#   user = users.sample
+#   booking = Booking.new(car_id: car.id,
+#                             user_id: user.id,
+#                             booking_date: Faker::Date.in_date_period,
+#                             pickup_date: Faker::Date.in_date_period
+#                           )
+#   booking.save
+# end
+
+file1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/3_uos9dm.jpg")
+car = Car.new(title: "Classic BMW")
+car.photo.attach(io: file1, filename: "bmw.jpg", content_type: "image/jpg")
+car.save
+
+file1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/2_xtxhij.jpg")
+car.photo.attach(io: file1, filename: "bmw2.jpg", content_type: "image/jpg")
