@@ -26,8 +26,8 @@
       <% @cars.each do |car| %>
 
         <div class="card" style="background-image: url(http://kitt.lewagon.com/placeholder/cities/rio)">
-          
-          <%= link_to car.car_type, car_path(car) %>
+
+          <%= link_to car.title, car_path(car) %>
         </div>
 
       <% end %>
@@ -37,5 +37,7 @@
       <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoiam9zaGJhMDYiLCJhIjoiY2xkeXEzbWltMHR3MDNwcngycTBjYXAxaCJ9.MyX0L-JF5_tdte8TQ775vg'>
 
     </div>
+    <%= cl_image_tag("dlkv0zvjvksfxgskt13w",
+      width: 400, height: 300, crop: :fill) %>
   </body>
 </html>
