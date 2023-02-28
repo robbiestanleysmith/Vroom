@@ -1,0 +1,39 @@
+<%= simple_form_for @car do |f| %>
+
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= f.input :title, as: :string, placeholder: "Ex: Family cruiser for weekend getaways" %>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <%= f.input :make, placeholder: "Ex: Audi" %>
+      </div>
+      <div class="col-3">
+        <%= f.input :model, placeholder: "Ex: RS 6"%>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <%= f.input :mileage, as: :integer, step: :any, placeholder: "Ex: 1421" %>
+      </div>
+      <div class="col-3">
+        <%= f.input :price_per_day, as: :integer, step: :any, placeholder: "Ex: 89" %>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= f.input :location, as: :string, step: :any, placeholder: "Ex: Shoreditch, London" %>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <%= f.button :submit, "Create this listing", class: "btn btn-primary" %>
+      </div>
+    </div>
+
+<% end %>
