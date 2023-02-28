@@ -5,6 +5,9 @@ Availability: <%= @car.availability %>
 <%= link_to "Back to all listings", cars_path, class: "btn btn-primary" %>
 <%= link_to "Book this car",  new_car_booking_path(@car), class: "btn btn-primary" %>
 
+<%= link_to 'Remove', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
 <div style="--maxWidth:1120px" class="plmw1e5 mq5rv0q dir dir-ltr"><div data-plugin-in-point-id="TITLE_DEFAULT" data-section-id="TITLE_DEFAULT" style="padding-top:24px"><section><div class="_b8stb0"><span class="_1n81at5"><h1 tabindex="-1" class="_fecoyn4" elementtiming="LCP-target">BMW 2002 - 1975 - A modern classic that's sure to turn heads!</h1>
 <div></div>
 
@@ -32,3 +35,4 @@ The BMW Series 02 had a good commercial success, so the German company decided t
 <% @car.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+

@@ -21,6 +21,21 @@ class CarsController < ApplicationController
     end
   end
 
+  def edit
+    @car = Car.find(params[:id])
+  end
+
+  def update
+    @car = Car.find(params[:id])
+    @dog.update(dog_params)
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to cars_path, status: :see_other
+  end
+
   private
 
   def car_params
