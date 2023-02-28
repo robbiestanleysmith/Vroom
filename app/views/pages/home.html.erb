@@ -1,4 +1,4 @@
-t <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>GetAWagon</title>
@@ -15,17 +15,14 @@ t <!DOCTYPE html>
     <div class="container">
 
       <div class="search-field">
-        <h2>Over 1000 results in your area</h2>
+        <h2><%= @cars.length %> results in your area</h2>
         <%= render "shared/searchForm" %>
       </div>
 
       <div class="cards">
-        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+      <% @cars.each do |car| %>
+        <%= link_to car_path(car), :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car", car: car %><% end %>
+      <% end %>
       </div>
 
     </div>

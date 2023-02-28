@@ -1,6 +1,5 @@
 <h1>Detail page</h1>
 <p> Brand: <%= @car.title %> </p>
-Availability: <%= @car.availability %>
 <br>
 <%= link_to "Back to all listings", cars_path, class: "btn btn-primary" %>
 <%= link_to "Book this car",  new_car_booking_path(@car), class: "btn btn-primary" %>
@@ -35,4 +34,3 @@ The BMW Series 02 had a good commercial success, so the German company decided t
 <% @car.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
-
