@@ -21,10 +21,18 @@ class BookingsController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @booking = Booking.find(params[:id])
   end
 
-  def delete
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
   end
 
   private
