@@ -51,6 +51,7 @@ user5 = User.create(email: "vintagebrian@gmail.com", password: "carlife", first_
 bmw = Car.create!(title: "Classic BMW", make: "BMW", model: "2002 tii", price_per_day: 170, location: "Guildford, Surrey", mileage: 75670, user: user1)
 
 bmw1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/3_uos9dm.jpg")
+
 bmw.photos.attach(io: bmw1, filename: "bmw1.jpg", content_type: "image/jpg")
 bmw2 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/2_xtxhij.jpg")
 bmw.photos.attach(io: bmw2, filename: "bmw2.jpg", content_type: "image/jpg")
