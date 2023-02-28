@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 gem 'faker'
+gem "cloudinary"
 
 gem "dotenv-rails", groups: [:development, :test]
 

@@ -47,34 +47,34 @@ user1 = User.create(email: "rob@gmail.com", password: "123456")
 
 bmw1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/3_uos9dm.jpg")
 car = Car.new(title: "Classic BMW", make: "BMW")
-car.photo.attach(io: bmw1, filename: "bmw1.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw1, filename: "bmw1.jpg", content_type: "image/jpg")
 car.save
 
 bmw2 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/2_xtxhij.jpg")
-car.photo.attach(io: bmw2, filename: "bmw2.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw2, filename: "bmw2.jpg", content_type: "image/jpg")
 
 bmw3 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/6_vdlqja.jpg")
-car.photo.attach(io: bmw3, filename: "bmw3.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw3, filename: "bmw3.jpg", content_type: "image/jpg")
 
 bmw4 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/4_jr1tq8.jpg")
-car.photo.attach(io: bmw4, filename: "bmw4.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw4, filename: "bmw4.jpg", content_type: "image/jpg")
 
 bmw5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/5_mvdheb.jpg")
-car.photo.attach(io: bmw5, filename: "bmw5.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw5, filename: "bmw5.jpg", content_type: "image/jpg")
 
 bmw6 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/9_e1k0ir.jpg")
-car.photo.attach(io: bmw6, filename: "bmw6.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw6, filename: "bmw6.jpg", content_type: "image/jpg")
 
 bmw7 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/7_pdy96v.jpg")
-car.photo.attach(io: bmw7, filename: "bmw7.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw7, filename: "bmw7.jpg", content_type: "image/jpg")
 
 bmw8 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/10_kvzq3z.jpg")
-car.photo.attach(io: bmw8, filename: "bmw8.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw8, filename: "bmw8.jpg", content_type: "image/jpg")
 
 bmw9 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/1_l2rgzw.jpg")
-car.photo.attach(io: bmw9, filename: "bmw9.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw9, filename: "bmw9.jpg", content_type: "image/jpg")
 
 bmw10 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/8_y84qvs.jpg")
-car.photo.attach(io: bmw10, filename: "bmw10.jpg", content_type: "image/jpg")
+car.photos.attach(io: bmw10, filename: "bmw10.jpg", content_type: "image/jpg")
 
 puts "database populated!"
