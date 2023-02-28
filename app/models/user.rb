@@ -3,4 +3,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
+  validates :avatar, presence: true
+  validates :host_rating, presence: true
+  validates :host_answer, presence: true
+  validates :host_answer, inclusion: [true, false]
 end
