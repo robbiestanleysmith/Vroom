@@ -1,25 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
+
+puts "cleaning database"
+Car.destroy_all
+User.destroy_all
+
+puts "populating database"
 
 # Seed users
 email_suffix = %w[gmail.com hotmail.de live.com yahoo.com outlook.com]
 
-50.times do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
+# 50.times do
+#   first_name = Faker::Name.first_name
+#   last_name = Faker::Name.last_name
 
-  email = "#{first_name}.#{last_name}@#{email_suffix.sample}"
-  user = User.new(first_name: first_name,
-              last_name: last_name,
-              email: email)
-  user.save
-end
+#   email = "#{first_name}.#{last_name}@#{email_suffix.sample}"
+#   user = User.new(first_name: first_name,
+#               last_name: last_name,
+#               email: email)
+#   user.save
+# end
 
 # Seed cars
 
@@ -43,11 +42,39 @@ end
 #                           )
 #   booking.save
 # end
+user1 = User.create(email: "rob@gmail.com", password: "123456")
 
-file1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/3_uos9dm.jpg")
-car = Car.new(title: "Classic BMW")
-car.photo.attach(io: file1, filename: "bmw.jpg", content_type: "image/jpg")
+
+bmw1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/3_uos9dm.jpg")
+car = Car.new(title: "Classic BMW", make: "BMW")
+car.photo.attach(io: bmw1, filename: "bmw1.jpg", content_type: "image/jpg")
 car.save
 
-file1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/2_xtxhij.jpg")
-car.photo.attach(io: file1, filename: "bmw2.jpg", content_type: "image/jpg")
+bmw2 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/2_xtxhij.jpg")
+car.photo.attach(io: bmw2, filename: "bmw2.jpg", content_type: "image/jpg")
+
+bmw3 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/6_vdlqja.jpg")
+car.photo.attach(io: bmw3, filename: "bmw3.jpg", content_type: "image/jpg")
+
+bmw4 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/4_jr1tq8.jpg")
+car.photo.attach(io: bmw4, filename: "bmw4.jpg", content_type: "image/jpg")
+
+bmw5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/5_mvdheb.jpg")
+car.photo.attach(io: bmw5, filename: "bmw5.jpg", content_type: "image/jpg")
+
+bmw6 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/9_e1k0ir.jpg")
+car.photo.attach(io: bmw6, filename: "bmw6.jpg", content_type: "image/jpg")
+
+bmw7 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/7_pdy96v.jpg")
+car.photo.attach(io: bmw7, filename: "bmw7.jpg", content_type: "image/jpg")
+
+bmw8 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/10_kvzq3z.jpg")
+car.photo.attach(io: bmw8, filename: "bmw8.jpg", content_type: "image/jpg")
+
+bmw9 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/1_l2rgzw.jpg")
+car.photo.attach(io: bmw9, filename: "bmw9.jpg", content_type: "image/jpg")
+
+bmw10 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589294/8_y84qvs.jpg")
+car.photo.attach(io: bmw10, filename: "bmw10.jpg", content_type: "image/jpg")
+
+puts "database populated!"
