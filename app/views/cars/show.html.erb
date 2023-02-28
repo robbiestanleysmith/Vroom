@@ -5,6 +5,30 @@ Availability: <%= @car.availability %>
 <%= link_to "Back to all listings", cars_path, class: "btn btn-primary" %>
 <%= link_to "Book this car",  new_car_booking_path(@car), class: "btn btn-primary" %>
 
+<div style="--maxWidth:1120px" class="plmw1e5 mq5rv0q dir dir-ltr"><div data-plugin-in-point-id="TITLE_DEFAULT" data-section-id="TITLE_DEFAULT" style="padding-top:24px"><section><div class="_b8stb0"><span class="_1n81at5"><h1 tabindex="-1" class="_fecoyn4" elementtiming="LCP-target">BMW 2002 - 1975 - A modern classic that's sure to turn heads!</h1>
+<div></div>
+
+<%# <img src="https://www.hperent.com/cars/bmw-2002-tii/main.jpg" %>
+
+<p>
+The BMW 2002 is a car produced by the German car company between 1971 and 1975.The first BMW 02 Series was designed in 1966 in response to the desire to have a car with sport features.
+
+The body design was entrusted to Giovanni Michelotti, who re-proposes the forms introduced by Neue Klasse, while for the mechanical part the German company decides to equip the 02 with rear-wheel drive, independent wheel suspension and 4-speed manual transmission.
+
+The BMW Series 02 had a good commercial success, so the German company decided to improve the car by presenting the 2002 version with a 1990 cc engine, a car with a clearly sporty character.</p>
+
+
+<div class="_dm2bj1"><span class="_1jvg42j"><span class="_12m9c11"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 14px; width: 14px; fill: currentcolor;"></svg></span><span class="_17p6nbba" aria-hidden="true"></span><span class="_1jvg42j"><button type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">4.95 ·</span><span class="_s65ijh7"><button aria-label="Rated 4.95 out of 5 from 20 reviews." type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">20 reviews</button></span></span><span class="_5oadh0" aria-hidden="true">·</span><span class="_1jvg42j"><span class="_12m9c11"><span class="_8tbpu3" aria-hidden="true">󰀃</span></span><span aria-hidden="false" class="_1mhorg9"></span><span class="_1jvg42j"><button type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">Superhost</span></span><span class="_5oadh0" aria-hidden="true">·</span><span class="_1jvg42j"><button type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">
+<span class="_9xiloll" aria-hidden="false">London, England, United Kingdom</span></button></span></div><div class="_88xxct"><div class="_y4w03w"><div class="_1jdtwz4">
+
+<h2 tabindex="-1" class="_14i3z6h" elementtiming="LCP-target">'BMW 2002' is hosted by&nbsp;Marko </h2>
+
+<!--img class="_9ofhsl" aria-hidden="true" alt="Marko is a superhost. Learn more about Marko." decoding="async" elementtiming="LCP-target" src="app/assets/images/marko logo.jpeg" style="object-fit: cover; vertical-align: bottom;"-->
+
+<%= image_tag "marko logo.jpeg" %>
+
+<div data-plugin-in-point-id="HERO_DEFAULT" data-section-id="HERO_DEFAULT" style="padding-top:24px"><div class="_88xxct"><div class="_z80d2i"><div class="_9xgknn"><div class="_168ht2w"><div class="_skzmvy"><div class="_5ltqju"><div class="_13sj9hk"><div class="_100fji8"><div class="c1d4ry4s dir dir-ltr"><button aria-label="Listing image 1, Show all photos" type="button" class="_1xh26pm2 l1j9v1wn dir dir-ltr"><div class="_1h6n1zu" style="display: inline-block; vertical-align: bottom; height: 100%; width: 100%; min-height: 1px;"><picture><source srcset="/Users/neilcairns/code/ndc13/get_a_wagon/app/assets/images/BMW-2002-Front-View-Feature-New-Size-e1674489699901.jpg
+" media="(max-width: 743px)"></div>
 <% @car.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
