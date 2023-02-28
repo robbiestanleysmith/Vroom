@@ -8,3 +8,11 @@
   grid-gap: 16px;
   flex-grow: 1;
 }
+
+.search-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 10px;
+}

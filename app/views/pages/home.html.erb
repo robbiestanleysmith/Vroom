@@ -11,19 +11,23 @@ t <!DOCTYPE html>
   </head>
 
   <body>
-  Hello Body
 
-    <%# <div class="navbar-minimalist">
-      <img src="images/logo.png">
-    </div> %>
-    <div class="cards">
-      <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-      <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-      <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-      <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-      <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
-      <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+    <div class="container">
+
+      <div class="search-field">
+        <h2>Over 1000 results in your area</h2>
+        <%= render "shared/searchForm" %>
+      </div>
+
+      <div class="cards">
+        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+        <%= link_to root_path, :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car" %><% end %>
+      </div>
+
     </div>
-    
   </body>
 </html>
