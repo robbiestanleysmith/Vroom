@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.cards {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+}
+
+.search-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 10px;
+}
