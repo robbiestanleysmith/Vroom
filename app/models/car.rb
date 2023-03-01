@@ -1,6 +1,9 @@
 class Car < ApplicationRecord
-  validates :title, presence: true
-  # validates :availability, presence: true
-  has_many_attached :photos
+
+  has_many :bookings
   belongs_to :user
+  
+  has_many_attached :photos
+
+  validates :title, presence: true
 end
