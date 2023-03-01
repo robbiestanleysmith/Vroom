@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = User.first #-> Change to current user
+    @user = current_user
     @bookings = Booking.all
     @cars = Car.all
   end
