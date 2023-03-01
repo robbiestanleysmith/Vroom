@@ -1,11 +1,9 @@
 <div class="container">
-<h1>Detail page</h1>
-<p> Brand: <%= @car.title %> </p>
-<br>
-<%= link_to "Back to all listings", cars_path, class: "btn btn-primary" %>
+
+<%= link_to "Back to home",  root_path, class: "btn btn-primary" %>
 <%= link_to "Book this car",  new_car_booking_path(@car), class: "btn btn-primary" %>
 <%= link_to "Check availability for this car", new_car_booking_path(@car), class: "btn btn-primary" %>
-<%= link_to 'Remove', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Remove', car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
 </div>
 
 <div class="container">
