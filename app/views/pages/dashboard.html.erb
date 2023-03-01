@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="card-listings m-3">
+  <div class="card-listings my-3 p-3">
     <h2>Here are all your listings</h2>
     <ul>
       <% @cars.where(user_id: @user.id).each do |car| %>
