@@ -8,5 +8,5 @@ class User < ApplicationRecord
   # validates :host_answer, presence: true
   # validates :host_answer, inclusion: [true, false]
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable
 end
