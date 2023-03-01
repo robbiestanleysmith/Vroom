@@ -17,6 +17,11 @@
         <td><%= booking.pickup_date %></td>
         <td><%= booking.dropoff_date %></td>
         <td><%= booking.status %></td>
+        <td>
+            <% if booking.status == "confirmed" %>
+              <%= link_to "Cancel", cancel_booking_path(booking)%>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
