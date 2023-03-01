@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :cars do
     resources :bookings, only: [:new, :create, :edit, :update]
   end
+  get "dashboard", to: "pages#dashboard"
 end
