@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.car_id = params[:car_id]
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end

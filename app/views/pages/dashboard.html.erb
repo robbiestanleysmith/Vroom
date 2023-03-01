@@ -6,18 +6,18 @@
 
   <div class="card-tables">
     <div class="card-guest m-3">
-      <h2>Here is a list of your upcoming reservations</h2>
+      <h2>Upcoming bookings as guest</h2>
       <%= render "table_guest", locals: {user: @user, bookings: @bookings, cars: @cars} %>
     </div>
 
     <div class="card-host m-3">
-      <h2>Here is a list of bookings, guest made with you</h2>
+      <h2>Upcoming bookings as host</h2>
       <%= render "table_host", locals: {user: @user, bookings: @bookings, cars: @cars} %>
     </div>
   </div>
 
   <div class="card-listings my-3 p-3">
-    <h2>Here are all your listings</h2>
+    <h2>My listings</h2>
     <ul>
       <% @cars.where(user_id: @user.id).each do |car| %>
         <li><%= car.title %> | <%= link_to "Modify listing", edit_car_path(car)%> | "Delete listing"</li>
