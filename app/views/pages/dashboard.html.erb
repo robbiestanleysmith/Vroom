@@ -7,12 +7,12 @@
   <div class="card-tables">
     <div class="card-guest m-3">
       <h2>Upcoming bookings as guest</h2>
-      <%= render "table_guest", locals: {user: @user, bookings: @bookings, cars: @cars} %>
+      <%= render "table_guest", locals: {user: @user, all_bookings: @all_bookings, cars: @cars} %>
     </div>
 
     <div class="card-host m-3">
       <h2>Upcoming bookings as host</h2>
-      <%= render "table_host", locals: {user: @user, bookings: @bookings, cars: @cars} %>
+      <%= render "table_host", locals: {host_bookings: @host_bookings, cars: @cars} %>
     </div>
   </div>
 
