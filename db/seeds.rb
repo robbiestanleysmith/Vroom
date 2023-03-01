@@ -48,7 +48,7 @@ user3 = User.create(email: "rick@gmail.com", password: "pickle", first_name: "ri
 user4 = User.create(email: "bc@gmail.com", password: "cliffjump", first_name: "bonnie", last_name: "clyde")
 user5 = User.create(email: "vintagebrian@gmail.com", password: "carlife", first_name: "brian", last_name: "butterfield")
 
-bmw = Car.create!(title: "Classic BMW", make: "BMW", model: "2002 tii", price_per_day: 170, location: "Guildford, Surrey", mileage: 75670, description: "The BMW 2002 is a car produced by the German car company between 1971 and 1975. The first BMW 02 Series was designed in 1966 in response to the desire to have a car with sport features. The body design was entrusted to Giovanni Michelotti, who re-proposes the forms introduced by Neue Klasse, while for the mechanical part the German company decides to equip the 02 with rear-wheel drive, independent wheel suspension and 4-speed manual transmission.The BMW Serie 02 had a good commercial success, so the German company decided to improve the car by presenting the 2002 version with a 1990 cc engine, a car with a clearly sporty character.", user: user1)
+bmw = Car.create!(title: "Classic 1967 BMW 2002 tii, well loved and timeless style", make: "BMW", model: "2002 tii", price_per_day: 170, location: "Guildford, Surrey", mileage: 75670, description: "The BMW 2002 is a car produced by the German car company between 1971 and 1975. The first BMW 02 Series was designed in 1966 in response to the desire to have a car with sport features. The body design was entrusted to Giovanni Michelotti, who re-proposes the forms introduced by Neue Klasse, while for the mechanical part the German company decides to equip the 02 with rear-wheel drive, independent wheel suspension and 4-speed manual transmission.The BMW Serie 02 had a good commercial success, so the German company decided to improve the car by presenting the 2002 version with a 1990 cc engine, a car with a clearly sporty character.", user: user1)
 
 bmw1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677589295/3_uos9dm.jpg")
 
@@ -118,7 +118,7 @@ daimler.photos.attach(io: daimler4, filename: "d4.jpg", content_type: "image/jpg
 daimler5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677600652/2_4_e7afcj.jpg")
 daimler.photos.attach(io: daimler5, filename: "d5.jpg", content_type: "image/jpg")
 
-ferrari = Car.create!(title: "Ferrari 246 GT Dino - the ultimate vintage luxury driving experience!", make: "Ferrari", model: "246 GT Dino", price_per_day: 550, location: "Finchley, London", mileage: 37546, description: "The Ferrari Dine 246 was the first street model with a mid-engine built between 1969 and 1973.
+ferrari = Car.create!(title: "Ferrari 246 GT Dino - the ultimate driving experience!", make: "Ferrari", model: "246 GT Dino", price_per_day: 550, location: "Finchley, London", mileage: 37546, description: "The Ferrari Dine 246 was the first street model with a mid-engine built between 1969 and 1973.
   It was not just equipped with any motor, but with a 6 cylinder V motor with enormous power that stemmed from other sport engines designed by Dino Ferrari.
   The body was made of steel (not aluminum) by the Scaglietti body shop. The weight gained by the body did not effect performance thanks to the increase in power that came from the new 2500cc motor.
   Given the huge success the car got from enthusiasts, the car remained in production until 1973. Our car belongs to the series named ‘L’ which was built between 1969 and 1971 in only 357 units.", user: user5)
@@ -165,7 +165,7 @@ vic.photos.attach(io: vic4, filename: "v4.jpg", content_type: "image/jpg")
 vic5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677602288/8_3_acucys.jpg")
 vic.photos.attach(io: vic5, filename: "v5.jpg", content_type: "image/jpg")
 
-mini = Car.create!(title: "Classic Innocenti Mini 1001, throwback to the old days a great price!", make: "Innocenti", model: "Mini 1001", price_per_day: 140, location: "New Forest, Hampshire", mileage: 125690, description: "The first Mini was produced by the British Motor Corporation from 1959 to 2000 and was later sold under license to several other automakers.
+mini = Car.create!(title: "Classic Innocenti Mini 1001, throwback to the old days...", make: "Innocenti", model: "Mini 1001", price_per_day: 140, location: "New Forest, Hampshire", mileage: 125690, description: "The first Mini was produced by the British Motor Corporation from 1959 to 2000 and was later sold under license to several other automakers.
   The need for a small, affordable car, designed for the city, led to reduced fuel consumption being pushed by the BMC in the design of the mini, which can be considered a masterpiece of its kind.
   Everything was designed and implemented to make the car practical and accessible: the engine was installed in the front so that the transverse gearbox placed under the engine only needed a single oil pan, and independent suspension and 10-inch wheels restrict the invasiveness of the wheels inside the car. ", user: user5)
 
@@ -180,23 +180,10 @@ mini.photos.attach(io: mini4, filename: "m4.jpg", content_type: "image/jpg")
 mini5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677603194/6_7_zpwp9z.jpg")
 mini.photos.attach(io: mini5, filename: "m5.jpg", content_type: "image/jpg")
 
-jag = Car.create!(title: "Jaguar E-Type 5.3 OTS, ultimate smooth driving experience", make: "Jaguar", model: "E-Type 5.3 OTS", price_per_day: 350, location: "Isle of Wight", mileage: 95436, description: "The Jaguar E-Type is a car produced by Jaguar from 1961 to 1975.
+jag = Car.create!(title: "Jaguar E-Type 5.3 OTS, super smooth driving experience", make: "Jaguar", model: "E-Type 5.3 OTS", price_per_day: 350, location: "Isle of Wight", mileage: 95436, description: "The Jaguar E-Type is a car produced by Jaguar from 1961 to 1975.
   The car was definitely revolutionary for the times, both in regards to aesthetics and design. The car won the first place in the Top Sports Cars of the 60s according to the magazine Sports Car International 2004.
   The Jaguar was built in three different versions during its production, known as Series 1, Series 2, and Series 3. For the cars of the last Series, like our car, the changes were mostly mechanical.
   It was mounted with the new V-12 engine, the braking system was upgraded and it had power steering. It also adopted an exhaust system with four rear terminals.", user: user5)
-
-jag1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677603453/1_9_uhtydb.jpg")
-jag.photos.attach(io: jag1, filename: "j1.jpg", content_type: "image/jpg")
-jag2 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677603453/4_8_ldabnj.jpg")
-jag.photos.attach(io: jag2, filename: "j2.jpg", content_type: "image/jpg")
-jag3 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677603453/3_4_ss6cn5.jpg")
-jag.photos.attach(io: jag3, filename: "j3.jpg", content_type: "image/jpg")
-jag4 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677603453/2_7_fvbm0x.jpg")
-jag.photos.attach(io: jag4, filename: "j4.jpg", content_type: "image/jpg")
-jag5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677603453/5_7_rnqkez.jpg")
-jag.photos.attach(io: jag5, filename: "j5.jpg", content_type: "image/jpg")
-
-jag = Car.create!(title: "Jaguar E-Type 5.3 OTS, ultimate smooth driving experience", make: "Jaguar", model: "E-Type 5.3 OTS", price_per_day: 350, location: "Isle of Wight", mileage: 95436, user: user5)
 
 jag1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677603453/1_9_uhtydb.jpg")
 jag.photos.attach(io: jag1, filename: "j1.jpg", content_type: "image/jpg")
