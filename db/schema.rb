@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_171357) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_113222) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,10 +60,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_171357) do
     t.string "title"
     t.string "make"
     t.string "model"
-    t.float "price_per_day"
     t.string "location"
     t.text "description"
     t.bigint "mileage"
+    t.integer "price_per_day"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
