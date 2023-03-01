@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="card-user my-3">
+    <h1>Welcome, <%= @user.first_name.capitalize %>!</h1>
+  </div>
+
+  <div class="card-tables">
+    <div class="card-guest m-3">
+      <h2>Here is a list of your upcoming reservations</h2>
+      <%= render "table_guest", locals: {user: @user, bookings: @bookings, cars: @cars} %>
+    </div>
+
+    <div class="card-host m-3">
+      <h2>Here is a list of bookings, guest made with you</h2>
+      <%= render "table_host", locals: {user: @user, bookings: @bookings, cars: @cars} %>
+    </div>
+  </div>
+
+  <div class="card-listings m-3">
+    <h2>Here are all your listings</h2>
+    <ul>
+      <% @cars.where(user_id: @user.id).each do |car| %>
+        <li><%= car.title %> | <%= link_to "Modify listing", edit_car_path(car)%> | "Delete listing"</li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+</div>

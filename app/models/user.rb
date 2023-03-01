@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # validates :host_rating, presence: true
   # validates :host_answer, presence: true
   # validates :host_answer, inclusion: [true, false]
+  has_many :cars
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 end

@@ -1,0 +1,23 @@
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">Guest</th>
+      <th scope="col">Pickup</th>
+      <th scope="col">Dropoff</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.where(user_id: @user.id).each do |booking|  %>
+      <tr>
+        <th scope="row"><%= link_to @cars.find(booking.car_id).title, car_path(@cars.find(booking.car_id))%></th>
+        <td><%= booking.pickup_date %></td>
+        <td><%= booking.dropoff_date %></td>
+        <td><%= booking.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
