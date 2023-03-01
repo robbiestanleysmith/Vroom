@@ -3,7 +3,7 @@
 <br>
 <%= link_to "Back to all listings", cars_path, class: "btn btn-primary" %>
 <%= link_to "Book this car",  new_car_booking_path(@car), class: "btn btn-primary" %>
-
+<%= link_to "Check availability for this car", new_car_booking_path(@car), class: "btn btn-primary" %>
 <%= link_to 'Remove', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
