@@ -64,8 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_01_125645) do
     t.string "location"
     t.text "description"
     t.bigint "mileage"
-    t.integer "price_per_day"
     t.string "availability"
+    t.integer "price_per_day"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 

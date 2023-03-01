@@ -5,6 +5,10 @@
     <p>For <strong><%= @car.make %> <%= @car.model %></strong></p>
   </div>
 
+  <%= calendar(number_of_days: 4) do |date| %>
+  <%= date %>
+  <% end %>
+
   <%= render "form_bookings" %>
 
 </div>
