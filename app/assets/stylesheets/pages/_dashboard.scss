@@ -1,127 +1,78 @@
-.card-tables {
+.heading {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  margin-bottom: 10px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  h2 {
-    padding-bottom: 2px;
-    border-bottom: 0.5px solid rgba(170, 166, 166, 0.61);
+  width: 90vw;
+  margin: 5px auto;
+}
+
+.host_container {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 5px auto;
+  h1 {
     font-size: 20px;
   }
-  th {
-    font-size: 14px;
+}
+
+.cards-booking-host{
+  width: 65%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  .card-booking{
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+
+    .card-booking-status {
+      margin: 2px 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      .booking-status {
+        width: 125px;
+      }
+      .booking-action {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+      }
+    }
+
+    .card-booking-details {
+      margin: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+      .booking-item {
+        width: 35%;
+        border-right: 0.5px solid rgba(170, 166, 166, 0.61);
+      }
+      .booking-customer {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+      }
+      .booking-title{
+        font-size: 15px;
+        color: grey;
+      }
+      .container-img {
+        display: flex;
+        align-items: center;
+      }
+      .avatar-bordered-large {
+        width: 100px;
+        border-radius: 50%;
+      }
+    }
+
   }
-  td {
-    font-size: 12px;
-  }
-
-}
-
-.card-listing {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  h2 {
-    // border-bottom: 0.5px solid rgba(170, 166, 166, 0.61);
-    font-size: 20px;
-  }
-  th {
-    font-size: 14px;
-  }
-  td {
-    font-size: 12px;
-  }
-}
-
-.card-booking-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-.guest-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-}
-
-.card-booking-status {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  align-items: flex-start;
-  position: relative;
-
-}
-
-.card-title {
-  font-size: 14;
-}
-
-
-.card-listing {
-  p {
-    font-size: 12;
-  }
-  h2 {
-    font-size: 14;
-  }
-
-}
-
-
-.card-booking-info{
-  width: 30%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-}
-
-.left {
-  width: 40%;
-}
-
-.right {
-  width: 60%;
-  height: 100%;
-  border-radius: 15px;
-}
-
-.guest-info{
-  width: 60%;
-  align-items: center;
-
-}
-
-.booking-actions{
-  width: 10%;
-}
-
-.host-car-img {
-  padding: 10px;
-  border-radius: 25px;
-}
-
-.bottom {
-  height: 50%;
-  .btn {
-    margin-top: 15%;
-  }
-}
-.top {
-  height: 50%;
-  .btn {
-    margin-top: 15%;
-  }
-}
-
-.avatar-bordered-large {
-  width: 100px;
-  border-radius: 50%;
 }

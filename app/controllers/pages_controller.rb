@@ -1,14 +1,11 @@
 class PagesController < ApplicationController
-  # Skip login requirement for some pages
-  # skip_before_action :authenticate_user!, only: :home
-
   def home
     @cars = Car.all
   end
 
   def host_dashboard
     @user = current_user
-    @user_id = 5 #@user.id
+    @user_id = @user.id
 
     ## I want to get a list of bookings that the current user is the host of
 
@@ -21,8 +18,6 @@ class PagesController < ApplicationController
 
     @all_bookings = Booking.all
     @host_bookings = @all_bookings.select { |booking| host_car_ids.include?(booking.car_id) }
-
-    @booking =  @host_bookings.first
 
   end
 
