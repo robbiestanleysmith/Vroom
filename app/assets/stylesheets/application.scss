@@ -18,6 +18,8 @@ body {
   font-family: 'Varela Round', sans-serif;
   font-size: 18px;
   background: $background-color;
+  position: relative;
+  min-height: 100vh;
 }
 p {
   font-weight: lighter;
