@@ -1,0 +1,52 @@
+.showpage-container {
+  width: 80vw;
+  margin: 3px auto;
+}
+
+.carousel-inner {
+  height: 300px;
+  margin: 1px auto;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.avatar-large {
+  width: 56px;
+  border-radius: 50%;
+}
+
+.container-left {
+  width: 50%
+}
+.container-right {
+  width: 50%
+}
+
+.host-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 0.5px solid rgba(170, 166, 166, 0.61);
+}
+
+.car-info {
+  border-bottom: 0.5px solid rgba(170, 166, 166, 0.61);
+}
+
+.page-infos {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#card-booking {
+  float: right;
+  background-color: white;
+  width: 400px;
+  height: 60vh;
+  position: sticky;
+  top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
