@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "bookings/:id/decline", to: "bookings#decline", as: :decline_booking
 
   resources :cars do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:create, :edit, :update]
 
   end
   get "dashboard", to: "pages#dashboard"
