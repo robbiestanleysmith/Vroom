@@ -1,68 +1,94 @@
-<div class="container">
+<div class="showpage-container">
 
-<%= link_to "Back to home",  root_path, class: "btn btn-primary" %>
-<%= link_to "Book this car",  new_car_booking_path(@car), class: "btn btn-primary" %>
-<%= link_to "Check availability for this car", new_car_booking_path(@car), class: "btn btn-primary" %>
-<%= link_to 'Remove', car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
-</div>
-
-
-<div class="container">
-
-<div style="--maxWidth:1120px" class="plmw1e5 mq5rv0q dir dir-ltr"><div data-plugin-in-point-id="TITLE_DEFAULT" data-section-id="TITLE_DEFAULT" style="padding-top:24px"><section><div class="_b8stb0"><span class="_1n81at5"><h1 tabindex="-1" class="_fecoyn4" elementtiming="LCP-target"><%= @car.title %></h1>
-
-<div class="container">
-  <p><%= @car.description %></p>
-</div>
-
-
-<div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <div class="page-heading my-3">
+    <h1><%= @car.title %></h1>
+    <p> ★ 4.89 | 19 reviews | <%= @car.location %></p>
   </div>
-  <%# Write an each loop over the @car.photos %>
-  <div class="carousel-inner">
-    <% @car.photos.first(3).each_with_index do |photo, index| %>
-      <% if index == 0 %>
-        <div class="carousel-item active">
-          <%= cl_image_tag photo.key %>
-        </div>
-      <% else %>
-        <div class="carousel-item">
-          <%= cl_image_tag photo.key %>
-        </div>
+
+  <div class="carousel slide" id="carouselExampleIndicators">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <%# Write an each loop over the @car.photos %>
+    <div class="carousel-inner">
+      <% @car.photos.first(3).each_with_index do |photo, index| %>
+        <% if index == 0 %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key %>
+          </div>
+        <% else %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
+  <div class="page-infos my-3">
+    <div class="container-left mx-1">
+
+      <div class="host-info my-4 py-3">
+        <div class="host-info-text">
+          <h1>Car hosted by Host</h1>
+          <p>Hi, I am HOST and ....</p>
+        </div>
+
+        <div class="host-info-avatar">
+          <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        </div>
+      </div>
+
+      <div class="car-info technical my-4">
+        <h3>Specs</h3>
+        <ul>
+          <li>Make: <%= @car.make %> </li>
+          <li>Model: <%= @car.model %></li>
+          <li>Milage: <%= @car.mileage %></li>
+        </ul>
+        <br>
+      </div>
+      <div class="car-info description my-4">
+        <h3>Description</h3>
+        <p><%= @car.description %></p>
+        <br>
+      </div>
+    </div>
+
+    <div class="container-right mx-1">
+      <div id="card-booking">
+        <div class="card-booking-info border p-3">
+          194€ night  ★ 4.89 | 19 reviews |
+        </div>
+        <div class="card-booking-selection border">
+          Add dropdown
+        </div>
+        <div class="card-booking-button">
+          Add button
+        </div>
+        <div class="card-booking-summary">
+          Add booking summary
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
-<div data-plugin-in-point-id="HERO_DEFAULT" data-section-id="HERO_DEFAULT" style="padding-top:24px"><div class="_88xxct"><div class="_z80d2i"><div class="_9xgknn"><div class="_168ht2w"><div class="_skzmvy"><div class="_5ltqju"><div class="_13sj9hk"><div class="_100fji8"><div class="c1d4ry4s dir dir-ltr"><button aria-label="Listing image 1, Show all photos" type="button" class="_1xh26pm2 l1j9v1wn dir dir-ltr"><div class="_1h6n1zu" style="display: inline-block; vertical-align: bottom; height: 100%; width: 100%; min-height: 1px;"><picture><source srcset="/Users/neilcairns/code/ndc13/get_a_wagon/app/assets/images/BMW-2002-Front-View-Feature-New-Size-e1674489699901.jpg
-" media="(max-width: 743px)"></div>
-<% @car.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-</div>
-
-<div class="_dm2bj1"><span class="_1jvg42j"><span class="_12m9c11"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 14px; width: 14px; fill: currentcolor;"></svg></span><span class="_17p6nbba" aria-hidden="true"></span><span class="_1jvg42j"><button type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">4.95 ·</span><span class="_s65ijh7"><button aria-label="Rated 4.95 out of 5 from 20 reviews." type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">20 reviews</button></span></span><span class="_5oadh0" aria-hidden="true">·</span><span class="_1jvg42j"><span class="_12m9c11"><span class="_8tbpu3" aria-hidden="true">󰀃</span></span><span aria-hidden="false" class="_1mhorg9"></span><span class="_1jvg42j"><button type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">Superhost</span></span><span class="_5oadh0" aria-hidden="true">·</span><span class="_1jvg42j"><button type="button" class="l1j9v1wn bbkw4bl c1rxa9od dir dir-ltr">
-<span class="_9xiloll" aria-hidden="false">London, England, United Kingdom</span></button></span></div><div class="_88xxct"><div class="_y4w03w"><div class="_1jdtwz4">
-
-
-
-<%# <h2 tabindex="-1" class="_14i3z6h" elementtiming="LCP-target">'BMW 2002' is hosted by&nbsp;Marko </h2> %>
-
-<%# <%= image_tag "marko logo.jpeg" %>
-
-<%# <div class="about Marko"> %>
-<%# <p>Marko a Superhost, is Italian and takes pride in his 1957 Alfa Romeo Duetto, one of three cars he owns and rents through us. This particular Alfa is a pristine example of the classic marque. </p> %>
-</div>
+    t.string "availability"
+    t.integer "price_per_day"
