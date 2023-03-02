@@ -8,29 +8,54 @@
 
     <div class="card-listing">
 
-      <div class="card-booking-status mx-4 py-2">
-        <h2>Booking from <%= @booking.pickup_date %> to <%= @booking.dropoff_date%></h2>
-        <button type="button" class="btn btn-success">Confirmed</button>
-      </div>
-
       <div class="card-booking-content mx-4 py-2">
 
-        <div class="col mx-2 card-booking-info border">
-          <span class="card-title">Reservation for</span>
-          <h2><%= Car.find(@booking.car_id).title%></h2>
+        <div class="mx-2 card-booking-info">
+
+
+          <div class="left">
+            <% if @booking.status == "requested" %>
+              <button type="button" class="btn btn-outline-primary">Requested</button><br>
+            <% elsif @booking.status == "confirmed" %>
+              <button type="button" class="btn btn-success">Confirmed</button><br>
+            <% elsif @booking.status == "declined" %>
+              <button type="button" class="btn btn-danger">Declined</button><br>
+            <% elsif @booking.status == "cancelled" %>
+              <button type="button" class="btn btn-danger">Cancelled</button><br>
+            <% else %>
+              Status
+            <% end %>
+            <div class="booking-text my-3">
+              <h2><%= Car.find(@booking.car_id).make%> | <%= Car.find(@booking.car_id).model%></h2>
+              <p> <%= @booking.pickup_date %> - <br> <%= @booking.dropoff_date%></p>
+            </div>
+          </div>
+
+          <div class="right" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path Car.find(@booking.car_id).photos.first.key, height: 300, crop: :fill %>')">
+          </div>
 
         </div>
-        <div class="col mx-2 guest-info border">
+        <div class="mx-3 guest-info">
           <div class="details">
-            <span class="card-title">Your customer</span>
+            <h2>Your customer</h2>
               <p> Name: <%= User.find(@booking.user_id).last_name.capitalize %>, <%= User.find(@booking.user_id).first_name.capitalize %><br>
               Address: <%= Faker::Address.street_address %><br>
               Age: <%= rand(18..100) %><br></p>
           </div>
-          <%= cl_image_tag @user.photo.key, class: "card-car-user avatar-bordered" %>
+          <%= cl_image_tag User.find(@booking.user_id).photo.key, class: "card-car-user avatar-bordered-large" %>
         </div>
-        <div class="col mx-2  booking-actions border">
-        Actions
+        <div class="mx-3 booking-actions">
+            <% if @booking.status == "requested" %>
+            <div class="top">
+              <button type="button" class="btn btn-success w-100" style="vertical-align: middle">Confirm</button><br>
+            </div>
+            <div class="bottom">
+              <button type="button" class="btn btn-danger w-100" style="vertical-align: middle">Decline</button><br>
+            </div>
+            <% elsif @booking.status == "confirmed" %>
+              <%# <button type="button" class="btn btn-danger w-100">Cancel</button><br> %>
+            <% else %>
+            <% end %>
         </div>
 
       </div>
