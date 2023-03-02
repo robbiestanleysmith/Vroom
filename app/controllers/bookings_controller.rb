@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @booking.car_id = params[:car_id]
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to host_dashboard_path
     else
       redirect_to car_path(@booking.car_id), status: :unprocessable_entity
     end
@@ -16,21 +16,21 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "confirmed"
     @booking.save
-    redirect_to dashboard_path, status: :see_other
+    redirect_to host_dashboard_path, status: :see_other
   end
 
   def cancel
     @booking = Booking.find(params[:id])
     @booking.status = "cancelled"
     @booking.save
-    redirect_to dashboard_path, status: :see_other
+    redirect_to host_dashboard_path, status: :see_other
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = "declined"
     @booking.save
-    redirect_to dashboard_path, status: :see_other
+    redirect_to host_dashboard_path, status: :see_other
   end
 
   private
