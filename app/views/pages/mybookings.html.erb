@@ -1,13 +1,13 @@
 <div class="container">
 
-  <div class="card-user my-3">
-    <h1>Welcome, <%= @user.first_name.capitalize %>!</h1>
+  <div class="card-user mb-3">
+    <h1>Welcome, <%= current_user.first_name.capitalize %>!</h1>
   </div>
 
   <div class="card-tables">
     <div class="card-guest m-3">
       <h2>Upcoming bookings as guest</h2>
-      <%= render "table_guest", locals: {user: @user, all_bookings: @all_bookings, cars: @cars} %>
+      <%= render "table_guest", locals: {user: current_user, all_bookings: @all_bookings, cars: @cars} %>
     </div>
   </div>
 
