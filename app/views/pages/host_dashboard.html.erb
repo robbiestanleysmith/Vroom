@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="card-user my-3">
+    <h1>Welcome, <%= @user.first_name.capitalize %>!</h1>
+  </div>
+
+  <div class="cards-host">
+
+    <div class="card-listing">
+
+      <div class="card-booking-status mx-4 py-2">
+        <h2>Booking from <%= @booking.pickup_date %> to <%= @booking.dropoff_date%></h2>
+        <button type="button" class="btn btn-success">Confirmed</button>
+      </div>
+
+      <div class="card-booking-content mx-4 py-2">
+
+        <div class="col mx-2 card-booking-info border">
+          <span class="card-title">Reservation for</span>
+          <h2><%= Car.find(@booking.car_id).title%></h2>
+
+        </div>
+        <div class="col mx-2 guest-info border">
+          <div class="details">
+            <span class="card-title">Your customer</span>
+              <p> Name: <%= User.find(@booking.user_id).last_name.capitalize %>, <%= User.find(@booking.user_id).first_name.capitalize %><br>
+              Address: <%= Faker::Address.street_address %><br>
+              Age: <%= rand(18..100) %><br></p>
+          </div>
+          <%= cl_image_tag @user.photo.key, class: "card-car-user avatar-bordered" %>
+        </div>
+        <div class="col mx-2  booking-actions border">
+        Actions
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>

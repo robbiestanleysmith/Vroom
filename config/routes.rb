@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
   get "bookings/:id/decline", to: "bookings#decline", as: :decline_booking
 
-  get "dashboard", to: "pages#dashboard"
+  get "host_dashboard", to: "pages#host_dashboard", as: :host_dashboard
   get "mybookings", to: "pages#mybookings", as: :mybookings
 
   resources :cars do
