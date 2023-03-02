@@ -18,11 +18,17 @@ class PagesController < ApplicationController
     host_cars.each do |car|
       host_car_ids << car.id
     end
-
-    # Get all bookings that include that car
-    @all_bookings = Booking.all
-    @host_bookings = @all_bookings.select { |booking| host_car_ids.include?(booking.car_id) }
-
-    @cars = Car.all
   end
+
+  def mybookings
+    @user = current_user
+    @user_id = @user.id
+    @all_bookings = Booking.all
+  end
+
+
+  # Get all bookings that include that car
+  # @host_bookings = @all_bookings.select { |booking| host_car_ids.include?(booking.car_id) }
+
+  # @cars = Car.all
 end
