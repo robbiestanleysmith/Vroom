@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  # Skip login requirement for some pages
+  skip_before_action :authenticate_user!, only: :home
+
   def home
     @cars = Car.all
   end
