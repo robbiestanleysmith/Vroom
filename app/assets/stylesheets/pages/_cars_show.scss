@@ -4,11 +4,15 @@
 }
 
 .carousel-inner {
-  height: 360px;
+  height: 400px;
   margin: 1px auto;
   border-radius: 25px;
+}
+
+.carousel-item img {
   object-fit: cover;
-  object-position: center;
+  width: 100%;
+  object-position: 0 -80px;
 }
 
 .avatar-large {
