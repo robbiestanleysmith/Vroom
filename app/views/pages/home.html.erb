@@ -6,12 +6,12 @@
   </div>
 
   <div class="cards">
-    <%= if params[:query].present? %>
-      <%= @cars = Car.where(title: params[:query]) %>
-    <%= else %>
-      <%= @cars = Car.all %>
-    <%= end %>
-    
+    <% if params[:query].present? %>
+      <% @cars = Car.where(title: params[:query]) %>
+    <% else %>
+      <% @cars = Car.all %>
+    <% end %>
+
     <% @cars.each do |car| %>
       <%= link_to car_path(car), :action => 'go', style: 'color:black; text-decoration:none' do %><%= render "card_car", car: car %><% end %>
     <% end %>
