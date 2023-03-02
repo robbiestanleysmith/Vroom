@@ -1,0 +1,15 @@
+<div class="card-car clickable">
+  <%= cl_image_tag car.photos.first.key, height: 300, width: 400, crop: :fill %>
+
+  <div class="card-car-infos">
+    <div>
+      <h2><%= car.title %></h2>
+      <p><%= car.make %> | <%= car.model %></p>
+
+    </div>
+    <h2 class="card-car-pricing">£<%= car.price_per_day %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-car-user avatar-bordered" />
+    <%= cl_image_tag car.user.photo.key, class: "card-car-user avatar-bordered" %>
+
+  </div>
+</div>

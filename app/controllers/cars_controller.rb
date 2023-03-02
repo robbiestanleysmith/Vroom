@@ -1,6 +1,15 @@
 class CarsController < ApplicationController
   # skip_before_action :authenticate_user!, only: :show
 
+  def index
+    # raise
+    if params[:make].present?
+      @cars = Car.where(make: params[:make])
+    else
+      @cars = Car.all
+    end
+  end
+
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
