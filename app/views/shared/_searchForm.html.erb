@@ -1,20 +1,8 @@
-<div class="search-form border">
-  <div class="row g-2 justify-content-start">
-    <div class="col-sm-4">
-      <select class="form-select" id="reference">
-        <option selected>Brand</option>
-        <option value="audi">Audi</option>
-        <option value="bwm">BMW</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="vw">VW</option>
-        <option value="tesla">Telsa</option>
-      </select>
-    </div>
-    <div class="col-sm-4">
-      <input type="text" class="form-control" placeholder="Max price" aria-label="max_price">
-    </div>
-    <div class="col-sm-4">
-      <button type="button" class="btn btn-primary btn-filter w-100">Filter</button>
-    </div>
-  </div>
-</div>
+<%= form_with url: root_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary w-100" %>
+<% end %>
