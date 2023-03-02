@@ -1,8 +1,8 @@
 class CarsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: :show
 
   def show
     @car = Car.find(params[:id])
-    authorize @car
     @booking = Booking.new
   end
 
@@ -20,7 +20,6 @@ class CarsController < ApplicationController
   end
 
   def edit
-    authorize @car
     @car = Car.find(params[:id])
   end
 
