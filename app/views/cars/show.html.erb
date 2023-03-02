@@ -2,7 +2,7 @@
 
   <div class="page-heading my-3">
     <h1><%= @car.title %></h1>
-    <p> ★ 4.89 | 19 reviews | <%= @car.location %></p>
+    <p> ★ <%= rating = (Random.new.rand(1.0..5.0)).round(2) %> | <%= reviews = Random.new.rand(5..100) %> reviews | <%= @car.location %></p>
   </div>
 
   <div class="carousel slide" id="carouselExampleIndicators">
@@ -43,18 +43,19 @@
 
       <div class="host-info my-4 py-3">
         <div class="host-info-text">
-          <h1>Car hosted by Host</h1>
-          <p>Hi, I am HOST and ....</p>
+          <h1>Car hosted by <%= @car.user.first_name.capitalize %></h1>
         </div>
 
         <div class="host-info-avatar">
-          <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+          <%# <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" /> %>
+
+          <%= cl_image_tag @car.user.photo.key, class: "avatar-large" %>
         </div>
       </div>
 
       <div class="car-info technical my-4">
         <h3>Specs</h3>
-        <ul>
+        <ul style= "list-style: none">
           <li>Make: <%= @car.make %> </li>
           <li>Model: <%= @car.model %></li>
           <li>Milage: <%= @car.mileage %></li>
@@ -63,7 +64,7 @@
       </div>
       <div class="car-info description my-4">
         <h3>Description</h3>
-        <p><%= @car.description %></p>
+        <p style= "text-align: justify"><%= @car.description %></p>
         <br>
       </div>
     </div>
@@ -71,7 +72,7 @@
     <div class="container-right mx-1">
       <div id="card-booking">
         <div class="card-booking-info my-3 p-3">
-          <p>★ 4.89 | 194€ night | 19 reviews |<p>
+          <p>★ <%= rating %> | £<%= @car.price_per_day %>/day | <%= reviews %> reviews |<p>
         </div>
         <div class="card-booking-selection">
           <%= render "shared/form_bookings" %>
