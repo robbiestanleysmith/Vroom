@@ -1,4 +1,4 @@
-<div class="heading">
+<div class="heading-host">
   <h1>Welcome, <%= current_user.first_name.capitalize %>!</h1>
   <%= link_to "Add new car listing", new_car_path, class: "btn btn-success mx-2" %>
 </div>
@@ -50,7 +50,7 @@
             <div class="booking-customer">
               <div class="booking-customer-details">
                 <span class="booking-title">Your customer</span>
-                <h2><%= User.find(booking.user_id).last_name.capitalize %>, <%= User.find(booking.user_id).first_name.capitalize %> (★ <%= User.find(booking.user_id).rating %>)</h2>
+                <h2><%= User.find(booking.user_id).first_name.capitalize %> (★ <%= User.find(booking.user_id).rating %>)</h2>
                 <p>Address: <%= User.find(booking.user_id).address %><br>
                 Age: <%= User.find(booking.user_id).age %><br></p>
               </div>
