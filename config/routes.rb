@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "cars#index"
+  # root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "bookings/:id/confirm", to: "bookings#confirm", as: :confirm_booking
   get "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
