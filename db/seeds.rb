@@ -226,7 +226,7 @@ jag.photos.attach(io: jag5, filename: "j5.jpg", content_type: "image/jpg")
 
 puts "Seeding bookings"
 
-users = User.all.select { |user| user != user5 && user != user2 }
+users = User.all.select { |user| user != user5 }
 6.times {
   start_date = Faker::Date.between(from: '2022-09-23', to: '2023-09-25')
   end_date = start_date + rand(1..90)
