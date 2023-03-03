@@ -34,13 +34,14 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
-    @dog.update(dog_params)
+    @car.update(car_params)
+    redirect_to host_dashboard_path, status: :see_other
   end
 
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to host_dashboard_path, status: :see_other
   end
 
   private
