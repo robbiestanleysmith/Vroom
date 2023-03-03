@@ -22,8 +22,10 @@ class PagesController < ApplicationController
   end
 
   def mybookings
-    @user = current_user
-    @user_id = @user.id
-    @all_bookings = Booking.all
+    user = current_user
+    user_id = user.id
+
+    all_bookings = Booking.all
+    @my_bookings = all_bookings.select { |booking| booking.user == user }
   end
 end

@@ -1,15 +1,56 @@
-<div class="container">
+<div class="heading">
+  <h1>Welcome, <%= current_user.first_name.capitalize %>!</h1>
+</div>
+<div class="guest_container">
 
-  <div class="card-user mb-3">
-    <h1>Welcome, <%= current_user.first_name.capitalize %>!</h1>
+  <div class="cards-booking-guest">
+    <h1>Your upcoming reservations</h1>
+    <% @my_bookings.each do |booking| %>
+      <div class="card-booking">
+        <div class="card-booking-status px-3 py-2">
+          <div class="booking-status">
+            <% if booking.status == "requested" %>
+                <button type="button" class="btn btn-outline-primary w-100">Requested</button><br>
+              <% elsif booking.status == "confirmed" %>
+                <button type="button" class="btn btn-outline-success w-100">Confirmed</button><br>
+              <% elsif booking.status == "declined" %>
+                <button type="button" class="btn btn-outline-danger w-100">Declined</button><br>
+              <% elsif booking.status == "cancelled" %>
+                <button type="button" class="btn btn-outline-danger w-100">Cancelled</button><br>
+              <% else %>
+                Status
+              <% end %>
+          </div>
+          <div class="booking-action">
+            <% if booking.status == "confirmed" || booking.status == "requested" %>
+              <%= link_to "Cancel", cancel_booking_path(booking), class: "btn btn-outline-danger mx-2"%>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="card-booking-details px-3 pb-2">
+          <div class="booking-item">
+            <span class="booking-title">Your booking</span>
+            <h2><%= Car.find(booking.car_id).make%> | <%= Car.find(booking.car_id).model%></h2>
+            <p> <%= booking.pickup_date %> - <br> <%= booking.dropoff_date%></p>
+          </div>
+          <div class="booking-customer">
+            <div class="booking-customer">
+              <div class="booking-customer-details">
+                <span class="booking-title">Your host</span>
+                <h2><%= User.find(Car.find(booking.car_id).user_id).last_name.capitalize %>, <%= User.find(Car.find(booking.car_id).user_id).first_name.capitalize %> (★ <%= User.find(Car.find(booking.car_id).user_id).rating %>)</h2>
+                <p>Address: <%= User.find(Car.find(booking.car_id).user_id).address %><br>
+                Age: <%= User.find(Car.find(booking.car_id).user_id).age %><br></p>
+              </div>
+            </div>
+            <div class="container-img">
+              <%= cl_image_tag User.find(Car.find(booking.car_id).user_id).photo.key, class: "avatar-bordered-large" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
   </div>
-
-  <div class="card-tables">
-    <div class="card-guest m-3">
-      <h2>Upcoming bookings as guest</h2>
-      <%= render "table_guest", locals: {user: current_user, all_bookings: @all_bookings, cars: @cars} %>
-    </div>
-  </div>
-
 
 </div>
