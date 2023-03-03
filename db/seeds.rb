@@ -30,7 +30,7 @@ user4.photo.attach(io: avatar4, filename: "av4.jpg", content_type: "image/jpg")
 
 user5 = User.create!(email: "vintagebrian@gmail.com", password: "carlife", first_name: "brian", last_name: "butterfield", age: rand(18..95), address: Faker::Address.street_address, rating: rand(2.5...5.0).round(2))
 puts "Seeding 5/5 users..."
-avatar5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677764458/brian2_lz7zhw.jpg", age: rand(18..95), address: Faker::Address.street_address, rating: rand(2.5...5.0).round(2))
+avatar5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677764458/brian2_lz7zhw.jpg")
 user5.photo.attach(io: avatar5, filename: "av5.jpg", content_type: "image/jpg")
 
 brians_cars = []
