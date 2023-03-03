@@ -1,6 +1,13 @@
 <div class="heading">
   <h1>Welcome, <%= current_user.first_name.capitalize %>!</h1>
 </div>
+
+<% if Booking.where(user_id: current_user.id).length == 0 %>
+  <div id="no-listings-message" class="">You don't have any reservations yet. Create a new reservation!</p>
+  <%= link_to "Back to home", root_path, class: "btn btn-primary mx-2"%>
+</div>
+<% else %>
+
 <div class="guest_container">
 
   <div class="cards-booking-guest">
@@ -54,3 +61,5 @@
   </div>
 
 </div>
+
+<% end %>
