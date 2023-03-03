@@ -3,7 +3,13 @@
   <%= link_to "Add new car listing", new_car_path, class: "btn btn-success mx-2" %>
 </div>
 
-<div class="host_container">
+<% if current_user.cars.length == 0 %>
+<div id="no-listings-message" class="">You don't have any cars listed yet. Add a new listing!</p>
+</div>
+<% else %>
+
+  <div class="host_container">
+
 
   <div class="cards-booking-host">
     <h1>Your upcoming reservations</h1>
@@ -44,7 +50,7 @@
             <div class="booking-customer">
               <div class="booking-customer-details">
                 <span class="booking-title">Your customer</span>
-                <h2><%= User.find(booking.user_id).last_name.capitalize %>, <%= User.find(booking.user_id).first_name.capitalize %> (★ <%= rand(3..5) %>)</h2>
+                <h2><%= User.find(booking.user_id).last_name.capitalize %>, <%= User.find(booking.user_id).first_name.capitalize %> (★ <%= User.find(booking.user_id).rating %>)</h2>
                 <p>Address: <%= User.find(booking.user_id).address %><br>
                 Age: <%= User.find(booking.user_id).age %><br></p>
               </div>
@@ -77,3 +83,5 @@
     </div>
 
   </div>
+
+<% end %>
