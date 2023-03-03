@@ -8,27 +8,27 @@ Booking.destroy_all
 puts "Seeding database"
 
 
-user1 = User.create(email: "rob@gmail.com", password: "123456", first_name: "rob", last_name: "smith")
+user1 = User.create!(email: "rob@gmail.com", password: "123456", first_name: "rob", last_name: "smith")
 puts "Seeding 1/5 users..."
 avatar1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677762559/rsz_rsz_2thumbnail_alps_selfie_i6mkbd.png")
 user1.photo.attach(io: avatar1, filename: "av1.jpg", content_type: "image/png")
 
-user2 = User.create(email: "spongebob@gmail.com", password: "squarepants", first_name: "sponge", last_name: "bob")
+user2 = User.create!(email: "spongebob@gmail.com", password: "squarepants", first_name: "sponge", last_name: "bob")
 puts "Seeding 2/5 users..."
 avatar2 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677762866/spongebob_igaeww.jpg")
 user2.photo.attach(io: avatar2, filename: "av2.jpg", content_type: "image/jpg")
 
-user3 = User.create(email: "rick@gmail.com", password: "pickle", first_name: "rick", last_name: "morty")
+user3 = User.create!(email: "rick@gmail.com", password: "pickle", first_name: "rick", last_name: "morty")
 puts "Seeding 3/5 users..."
 avatar3 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677764458/rick2_vwm1wj.png")
 user3.photo.attach(io: avatar3, filename: "av3.jpg", content_type: "image/png")
 
-user4 = User.create(email: "bonnie@gmail.com", password: "killercouple", first_name: "bonnie", last_name: "clyde")
+user4 = User.create!(email: "bonnie@gmail.com", password: "killercouple", first_name: "bonnie", last_name: "clyde")
 puts "Seeding 4/5 users..."
 avatar4 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677764458/bonnie2_qnhju9.png")
 user4.photo.attach(io: avatar4, filename: "av4.jpg", content_type: "image/jpg")
 
-user5 = User.create(email: "vintagebrian@gmail.com", password: "carlife", first_name: "brian", last_name: "butterfield")
+user5 = User.create!(email: "vintagebrian@gmail.com", password: "carlife", first_name: "brian", last_name: "butterfield")
 puts "Seeding 5/5 users..."
 avatar5 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677764458/brian2_lz7zhw.jpg")
 user5.photo.attach(io: avatar5, filename: "av5.jpg", content_type: "image/jpg")
