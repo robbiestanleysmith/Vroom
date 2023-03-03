@@ -10,9 +10,9 @@ class PagesController < ApplicationController
     ## I want to get a list of bookings that the current user is the host of
 
     # Check which cars belong to the current user
-    host_cars = Car.where(user_id: @user_id)
+    @host_cars = Car.where(user_id: @user_id)
     host_car_ids = []
-    host_cars.each do |car|
+    @host_cars.each do |car|
       host_car_ids << car.id
     end
 

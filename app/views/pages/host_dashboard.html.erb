@@ -59,6 +59,21 @@
     <% end %>
   </div>
 
-  <div class="cards-listings-host border">
+  <div class="cards-listings-host">
     <h1>Your active listings</h1>
+    <div class="cards-listings">
+    <% @host_cars.each do |car| %>
+      <div class="card-listing">
+        <div class="card-listing-info">
+          <i class="fa-solid fa-car"></i> <%= car.make %> | <%= car.model %><br>
+        </div>
+        <div class="card-listing-actions">
+          <%= link_to "Edit", edit_car_path(car), class: "btn btn-sm btn-outline-secondary" %>
+          <%= link_to "Delete", car_path(car), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-warning" %>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+
   </div>
