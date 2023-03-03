@@ -7,7 +7,6 @@ Booking.destroy_all
 
 puts "Seeding database"
 
-
 user1 = User.create!(email: "rob@gmail.com", password: "123456", first_name: "rob", last_name: "smith", age: rand(18..95), address: Faker::Address.street_address, rating: rand(2.5...5.0).round(2))
 
 puts "Seeding 1/5 users..."
