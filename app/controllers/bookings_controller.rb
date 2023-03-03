@@ -16,21 +16,34 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "confirmed"
     @booking.save
-    redirect_to host_dashboard_path, status: :see_other
+    if @booking.user == current_user
+      redirect_to mybookings_path, status: :see_other
+    else
+      redirect_to host_dashboard_path, status: :see_other
+    end
   end
 
   def cancel
     @booking = Booking.find(params[:id])
     @booking.status = "cancelled"
     @booking.save
-    redirect_to host_dashboard_path, status: :see_other
+    if @booking.user == current_user
+      redirect_to mybookings_path, status: :see_other
+    else
+      redirect_to host_dashboard_path, status: :see_other
+    end
+
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = "declined"
     @booking.save
-    redirect_to host_dashboard_path, status: :see_other
+    if @booking.user == current_user
+      redirect_to mybookings_path, status: :see_other
+    else
+      redirect_to host_dashboard_path, status: :see_other
+    end
   end
 
   private
