@@ -8,7 +8,7 @@ Booking.destroy_all
 puts "Seeding database"
 
 
-user1 = User.create!(email: "rob@gmail.com", password: "123456", first_name: "rob", last_name: "smith")
+user1 = User.create!(email: "rob@gmail.com", password: "123456", first_name: "rob", last_name: "smith", )
 
 puts "Seeding 1/5 users..."
 avatar1 = URI.open("https://res.cloudinary.com/dcuj8efm3/image/upload/v1677762559/rsz_rsz_2thumbnail_alps_selfie_i6mkbd.png")
