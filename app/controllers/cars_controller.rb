@@ -2,9 +2,8 @@ class CarsController < ApplicationController
   # skip_before_action :authenticate_user!, only: :show
 
   def index
-    # raise
-    if params[:make].present?
-      @cars = Car.where(make: params[:make])
+    if params[:query].present?
+      @cars = Car.search_by_title(params[:query])
     else
       @cars = Car.all
     end
