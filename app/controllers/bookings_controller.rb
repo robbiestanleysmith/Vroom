@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @booking.car_id = params[:car_id]
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to host_dashboard_path
+      redirect_to mybookings_path
     else
       redirect_to car_path(@booking.car_id), status: :unprocessable_entity
     end
