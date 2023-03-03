@@ -1,8 +1,9 @@
-<%= form_with url: root_path, method: :get, class: "d-flex" do %>
+<%= form_with url: root_path, method: :get, class: "d-flex"  do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "E.g. Ferrari"
+    placeholder: "E.g. Ferrari",
+    style: "margin-right: 10px;"
   %>
   <%= submit_tag "Search", class: "btn btn-primary w-100" %>
 <% end %>
