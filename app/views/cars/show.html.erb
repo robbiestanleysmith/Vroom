@@ -2,7 +2,7 @@
 
   <div class="page-heading my-3">
     <h1><%= @car.title %></h1>
-    <p> ★ <%= rating = (Random.new.rand(1.0..5.0)).round(2) %> | <%= reviews = Random.new.rand(5..100) %> reviews | <%= @car.location %></p>
+    <p> ★ <%= @car.user.rating %> | <%= @car.user.reviews %> reviews | <%= @car.location %></p>
   </div>
 
   <div class="carousel slide" id="carouselExampleIndicators">
@@ -72,7 +72,7 @@
     <div class="container-right mx-1">
       <div id="card-booking">
         <div class="card-booking-info my-3 p-3">
-          <p>★ <%= rating %> | £<%= @car.price_per_day %>/day | <%= reviews %> reviews |<p>
+          <p>★ <%= @car.user.rating %> | £<%= @car.price_per_day %>/day | <%= @car.user.reviews %> reviews |<p>
         </div>
         <div class="card-booking-selection">
           <%= render "shared/form_bookings" %>
